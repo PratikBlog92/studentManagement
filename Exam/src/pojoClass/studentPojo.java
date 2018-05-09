@@ -243,10 +243,23 @@ public class studentPojo {
 		this.cource = cource;
 	}
 	
+	/* For Notifications	*/
 
+	public studentPojo(int id, String name, String email, String mobile, int totalFee, int ballence,
+			String nextInstallment, String cource) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.mobile = mobile;
+		this.totalFee = totalFee;
+		this.ballence = ballence;
+		this.nextInstallment = nextInstallment;
+		this.cource = cource;
+	}
 	
-	
-	
+
+
 
 	
 	

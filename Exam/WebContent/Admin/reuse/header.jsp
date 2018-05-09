@@ -1,6 +1,16 @@
+    <%@page import="java.util.List"%>
+<%@page import="notification.paymentNotification"%>
+<%@page import="pojoClass.studentPojo"%>
+<%@page import="java.util.ArrayList"%>
+<%
+    	 List <studentPojo> al =	paymentNotification.todaysPendingPayment();
+    	 
+			
+   %>
+    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Startmin</a>
+            <a class="navbar-brand" href="#">DataCouncil</a>
         </div>
 
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -19,20 +29,28 @@
         <ul class="nav navbar-right navbar-top-links">
             <li class="dropdown navbar-inverse">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                    <i class="fa fa-bell fa-fw"></i><span class="badge" style="background-color: red;"><%=al.size()%></span><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-alerts">
+                <%
+                	for(studentPojo sp : al)
+                	{
+                %>
                     <li>
                         <a href="#">
                             <div>
-                                <i class="fa fa-comment fa-fw"></i> Person Name
-                                <span class="pull-right text-muted small">Contact Number</span>
+                                <i class="fa fa-comment fa-fw"></i> <%=sp.getName()%>
+                                <span class="pull-right text-muted small"><%=sp.getMobile()%></span>
                             </div>
                         </a>
                     </li>
+                    
+                <%
+					}
+                %>
                     <li class="divider"></li>
                     <li>
-                        <a class="text-center" href="#">
+                        <a class="text-center" href="/Exam/Admin/todayMonyList.jsp">
                             <strong>Toadays Money List</strong>
                             <i class="fa fa-angle-right"></i>
                         </a>
@@ -41,7 +59,7 @@
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> secondtruth <b class="caret"></b>
+                    <i class="fa fa-user fa-fw"></i> Atharv <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -71,7 +89,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="/Exam/Admin/dashBoard.jsp" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                     	 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Enquiry<span class="fa arrow"></span></a>
