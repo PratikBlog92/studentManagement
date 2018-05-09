@@ -1,3 +1,7 @@
+<%@page import="notification.paymentNotification"%>
+<%@page import="pojoClass.studentPojo"%>
+<%@page import="java.util.List"%>
+<%@page import="email.sendMail"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="connection.Dbconnect"%>
@@ -41,6 +45,12 @@
     <![endif]-->
 </head>
 <body>
+<%
+	 List<studentPojo> list = paymentNotification.todaysPendingPayment();
+	 boolean b = sendMail.mailSend(list);
+
+	
+%>
 
 <div id="wrapper">
 
