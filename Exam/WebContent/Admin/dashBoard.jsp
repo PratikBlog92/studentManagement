@@ -1,3 +1,4 @@
+<%@page import="dashBoard.Dash"%>
 <%@page import="notification.paymentNotification"%>
 <%@page import="pojoClass.studentPojo"%>
 <%@page import="java.util.List"%>
@@ -48,8 +49,6 @@
 <%
 	 List<studentPojo> list = paymentNotification.todaysPendingPayment();
 	 boolean b = sendMail.mailSend(list);
-
-	
 %>
 
 <div id="wrapper">
@@ -68,16 +67,101 @@
 
             <!-- ... Your content goes here ... -->
             
-            <div class="row">
-            	<div class="col-sm-4"></div>
-            	<div class="col-sm-4">
-            	
-            	
-            	
-            	</div>
-            	<div class="col-sm-4"></div>
-            </div>
-
+			            <div class="row">
+			                    <div class="col-lg-3 col-md-6">
+			                        <div class="panel panel-primary">
+			                            <div class="panel-heading">
+			                                <div class="row">
+			                                    <div class="col-xs-3">
+			                                        <i class="fa fa-comments fa-5x"></i>
+			                                    </div>
+			                                    <div class="col-xs-9 text-right">
+			                                        <div class="huge"><%=Dash.getStudentCount() %></div>
+			                                        <div>Number of Students</div>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                            <a href="#">
+			                                <div class="panel-footer">
+			                                    <span class="pull-left">View Details</span>
+			                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+			
+			                                    <div class="clearfix"></div>
+			                                </div>
+			                            </a>
+			                        </div>
+			                    </div>
+			                    <div class="col-lg-3 col-md-6">
+			                        <div class="panel panel-green">
+			                            <div class="panel-heading">
+			                                <div class="row">
+			                                    <div class="col-xs-3">
+			                                        <i class="fa fa-tasks fa-5x"></i>
+			                                    </div>
+			                                    <div class="col-xs-9 text-right">
+			                                        <div class="huge"><%=Dash.getTotalFee() %></div>
+			                                        <div>Total Fee</div>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                            <a href="#">
+			                                <div class="panel-footer">
+			                                    <span class="pull-left">View Details</span>
+			                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+			
+			                                    <div class="clearfix"></div>
+			                                </div>
+			                            </a>
+			                        </div>
+			                    </div>
+			                    <div class="col-lg-3 col-md-6">
+			                        <div class="panel panel-yellow">
+			                            <div class="panel-heading">
+			                                <div class="row">
+			                                    <div class="col-xs-3">
+			                                        <i class="fa fa-shopping-cart fa-5x"></i>
+			                                    </div>
+			                                    <div class="col-xs-9 text-right">
+			                                        <div class="huge"><%=Dash.getBalence() %></div>
+			                                        <div>Total Balance Amount</div>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                            <a href="#">
+			                                <div class="panel-footer">
+			                                    <span class="pull-left">View Details</span>
+			                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+			
+			                                    <div class="clearfix"></div>
+			                                </div>
+			                            </a>
+			                        </div>
+			                    </div>
+			                    <div class="col-lg-3 col-md-6">
+			                        <div class="panel panel-red">
+			                            <div class="panel-heading">
+			                                <div class="row">
+			                                    <div class="col-xs-3">
+			                                        <i class="fa fa-support fa-5x"></i>
+			                                    </div>
+			                                    <div class="col-xs-9 text-right">
+			                                        <div class="huge"><%=Dash.getTotalQuestionCount() %></div>
+			                                        <div>Total Questions Count!</div>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                            <a href="#">
+			                                <div class="panel-footer">
+			                                    <span class="pull-left">View Details</span>
+			                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+			
+			                                    <div class="clearfix"></div>
+			                                </div>
+			                            </a>
+			                        </div>
+			                    </div>
+			                </div>
+			
         </div>
     </div>
 

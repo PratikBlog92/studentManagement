@@ -167,7 +167,7 @@
                     	 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Notifications<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/Exam/Admin/searchByFees.jsp">Fees</a>
+                                <a href="/Exam/Admin/todayMonyList.jsp">Fees</a>
                             </li>
                             
                              <li>
